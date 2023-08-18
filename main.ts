@@ -29,4 +29,4 @@ export function totalAvailableSlots(weekAppointments: Appointment[][]): number {
 	}, 0);
 }
 
-console.log(totalAvailableSlots(weekAppointments)); // This will give the total number of 30-minute slots available in the week
+console.log("Total Available Slots: ", totalAvailableSlots(weekAppointments)); // This will give the total number of 30-minute slots available in the week
