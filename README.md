@@ -50,3 +50,29 @@ npm run test
 - `timeToMinutes(time: string)`: Converts a time string to minutes since the start of the day.
 - `availableSlotsForDay(appointments: Appointment[])`: Calculates the available 30-minute slots for a given day based on the provided appointments.
 - `totalAvailableSlots(weekAppointments: Appointment[][])`: Calculates the total available 30-minute slots for a week based on the provided appointments.
+
+
+## Code Enhancements and Tooling
+
+### Prettier Code Formatting
+
+The codebase integrates **Prettier**, a popular code formatter, ensuring consistent code style across the project. This helps maintain readability and reduces the chances of style-related issues.
+
+
+### Husky Pre-commit Hooks
+
+With **Husky**, I've set up pre-commit hooks to ensure that every commit meets our quality standards. Before any commit is made, Husky checks for code formatting and runs tests to ensure everything is in order.
+
+
+### NPM Scripts
+
+The project includes several npm scripts to streamline common tasks:
+
+- `test`: Runs unit tests using Jest.
+- `start`: Compiles the TypeScript code and then runs the main application.
+- `format`: Formats the entire codebase using Prettier.
+- `prepare`: Sets up Husky hooks.
+- `check-types`: Checks TypeScript types without emitting output.
+- `check-format`: Checks if the codebase is formatted correctly using Prettier.
+
+To run any of these scripts, use the command `npm run <script-name>`. For example, to run tests, use `npm run test`.
