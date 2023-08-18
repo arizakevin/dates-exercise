@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+
+echo "🔎 Checking project's code quality and standards compliance before committing..."
+
+npm run test || 
+(
+    echo '❌ Tests Failed. ❌ - Make the required changes listed above, add changes and try to commit again.'
+    false;
+)
+
+# Check Prettier standards
+npm run check-format ||
+(
+	echo '❌ Prettier Check Failed. ❌ - Run "npm run format", add changes and try commit again.';
+	false;
+)
+
+# Check tsconfig standards
+npm run check-types ||
+(
+	echo '❌ Failed Type check. ❌ - Types Check Failed. Make the changes required above.'
+	false;
+)
+
+# If everything passes... Now we can commit
+echo '✅✅✅✅ Success! All pre-commit tests passed! Committing now... ✅✅✅✅'

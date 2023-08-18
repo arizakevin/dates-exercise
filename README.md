@@ -13,11 +13,13 @@ These instructions will help you set up the project on your local machine for de
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/arizakevin/dates-exercices
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd dates-exercices
    ```
